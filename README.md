@@ -1,2 +1,26 @@
-# Factor_Training
-Code and Data for Harold's Quant Channel Factor Training Series 哈罗德的量化频道 --- 因子实战系列全部 数据+代码文件
+
+
+---
+
+🌟🌟🌟 欢迎来到哈罗德的量化频道！🌟🌟🌟
+
+# 因子实战系列 中文版 （持续更新中）
+### “毫无保留的量化金融教程，特别适合入门和找第一份量化实习”
+- ⭐⭐⭐⭐⭐ 4.9/5 （500+ 评价）
+### 🎬 主讲：大导演哈罗德
+- 🏛 香港中文大学(深圳) 金融工程 本科
+- 📈 即将前往美国开启TOP金融工程硕士学位之路
+- 🌐 [关注我的Bilibili，看所有人都能听得懂的量化学习内容！](https://space.bilibili.com/629573485)
+- 📚 [关注我的YouTube，看更多量化投资干货！](https://www.youtube.com/@BD_Harold)
+- 📱 微信公众号：大导演哈罗德
+
+## ⬆️ 由于数据太大，无法上传大于1GB的文件，只能用百度云/onedrive获得，所以数据的获取方式：关注公众号，只需发送“因子实战 + 集数”就会自动回复所需的数据（例如“因子实战6” 即可获得第六集使用的数据）；如果下载速度太慢可以B站私信我给你回复哟！
+## 我在notebook中使用的都是绝对路径，大家可以把数据下载下来之后，都直接复制到代码同一个文件夹，代码就可以直接运行！
+
+🌟🌟🌟 我有一个梦想，就是让量化变成不再是束之高阁的灵丹妙药，而是让散户投资者认识市场风险最好的工具 @哈罗德的量化频道 🌟🌟🌟
+
+---
+
+<img width="660" alt="截屏2023-10-13 下午4 53 59" src="https://github.com/harrodyuan/Factor_Training/assets/111362008/634beecf-d220-461c-822c-51d4a6aa3135">
+
+<img width="454" alt="image" src="https://github.com/harrodyuan/Factor_Training/assets/111362008/27bce62a-a49e-4b07-a826-1d0e8a87e5ed">
