@@ -1,0 +1,15 @@
+# LOBSTER sample data (licensed)
+lobster_samples/
+LOBSTER_*.zip
+
+# Jupyter
+.ipynb_checkpoints/
+
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+*.pdf

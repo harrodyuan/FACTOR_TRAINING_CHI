@@ -1,0 +1,131 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\IfFileExists{lastpage.sty}{\usepackage{lastpage}}{}
+\usepackage{hyperref}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.6em}
+
+\pagestyle{fancy}
+\fancyhf{}
+\IfFileExists{lastpage.sty}{
+  \fancyfoot[C]{Financial Data Science II\ \ \ Updated March 10, 2026\ \ \ Page \thepage\ of \pageref{LastPage}}
+}{
+  \fancyfoot[C]{Financial Data Science II\ \ \ Updated March 10, 2026\ \ \ Page \thepage}
+}
+
+\begin{document}
+
+\begin{center}
+{\Large \textbf{Part 22: Feature Engineering}}
+\end{center}
+
+\textbf{Part 22: Feature Engineering}
+
+Feature engineering is the process of transforming raw data into signals
+that are informative for a prediction or decision task. In financial ML,
+this often makes the difference between a backtest that works and a model
+that survives in production.
+
+The focus in this note is on feature construction, validation, and
+organization of a feature library for predictive modeling.
+
+\section*{Core Principles}
+
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Causality and timing:} Features must be computable at the
+  prediction time. Any accidental use of future information creates
+  lookahead bias.
+  \item \textbf{Stability:} Favor features whose relationship to the target
+  is stable across time and regimes.
+  \item \textbf{Interpretability:} When possible, maintain financial
+  intuition for each feature family.
+  \item \textbf{Cost awareness:} Favor features that can be computed cheaply
+  and consistently at scale.
+\end{itemize}
+
+\section*{Feature Families}
+
+\textbf{1. Returns and Momentum}
+
+\begin{itemize}[leftmargin=*]
+  \item Simple and log returns at multiple horizons
+  \item Momentum and risk-adjusted momentum
+  \item Acceleration of returns or momentum
+\end{itemize}
+
+\textbf{2. Volatility and Risk}
+
+\begin{itemize}[leftmargin=*]
+  \item Rolling volatility (standard and exponential)
+  \item Volatility of volatility
+  \item Drawdown and time since peak
+  \item ATR and normalized range
+\end{itemize}
+
+\textbf{3. Trend and Technical Indicators}
+
+\begin{itemize}[leftmargin=*]
+  \item Moving averages and ratios
+  \item RSI, MACD, Bollinger features
+  \item Trend strength and regime proxies
+\end{itemize}
+
+\textbf{4. Liquidity and Volume}
+
+\begin{itemize}[leftmargin=*]
+  \item Volume z-scores and volume ratios
+  \item Dollar volume and liquidity proxies
+  \item OBV / VPT style cumulative volume signals
+\end{itemize}
+
+\textbf{5. Cross-Asset Features}
+
+\begin{itemize}[leftmargin=*]
+  \item Rolling correlation with benchmark
+  \item Beta and alpha versus benchmark
+  \item Relative momentum vs. index
+\end{itemize}
+
+\section*{Predictive Feature Workflow}
+
+\begin{enumerate}[leftmargin=*]
+  \item \textbf{Define target:} Choose a forward return horizon
+  (e.g., 5d, 20d). Decide regression or directional classification.
+  \item \textbf{Construct features:} Build feature groups above.
+  \item \textbf{Temporal validation:} Walk-forward evaluation and
+  leakage checks. Avoid sample re-use.
+  \item \textbf{Feature screening:} Rank features using linear and nonlinear
+  tests (e.g., F-test and mutual information).
+  \item \textbf{Ablation:} Add feature families one at a time to show
+  incremental out-of-sample value.
+\end{enumerate}
+
+\section*{Exercises}
+
+\textbf{Exercise 1.} Build a small feature set with returns, volatility,
+RSI, and drawdown. Use a 5-day forward return target and compare
+walk-forward performance for each feature family.
+
+\textbf{Exercise 2.} Add a cross-asset benchmark feature (beta vs. SPY)
+for the same target. Measure whether it improves out-of-sample MSE or
+hit rate.
+
+\section*{Notes and Code References}
+
+A working feature library and example scripts are in:
+
+\begin{itemize}[leftmargin=*]
+  \item \texttt{/Users/harold/4. RA work/yfinance\_feature\_engineering}
+  \item \texttt{/Users/harold/4. RA work/FACTOR\_TRAINING\_CHI}
+\end{itemize}
+
+These repositories include implementations of the feature families
+listed above, along with walk-forward validation and feature ranking.
+
+\end{document}
